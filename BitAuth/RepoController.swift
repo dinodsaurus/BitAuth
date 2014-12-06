@@ -8,28 +8,33 @@
 
 import UIKit
 
-class RepoController: UITableViewController, UIActionSheetDelegate {
+class RepoController: UIViewController, UITableViewDataSource, UITableViewDelegate, UIActionSheetDelegate {
     var repo = NSDictionary()
     let me = user["username"] as NSString
     var issues: NSArray = NSArray()
-
+    var active: NSDictionary = NSDictionary()
+    
+    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var noResultView: UIView!
     @IBOutlet weak var detailTitle: UINavigationItem!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    
+    @IBOutlet weak var noItems: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        var activityIndicator = UIActivityIndicatorView(frame: CGRectMake(0, 0, 50, 50))
-
-        activityIndicator.hidesWhenStopped = true
-        activityIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.Gray
-
+        self.activityIndicator.hidesWhenStopped = true
+        self.activityIndicator.startAnimating()
+        
+        tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        
         self.detailTitle.title = repo["name"] as NSString
         
-        self.tableView.hidden = false
         let owner = repo["owner"] as NSString
         let slug = repo["slug"] as NSString
         var parameters =  Dictionary<String, AnyObject>()
-        parameters = ["sort":"kind", "status":"new", "responsible": me]
         
+        parameters = ["sort":"kind", "status":"new", "responsible": me]
         
         let url: NSString = "https://bitbucket.org/api/1.0/repositories/\(owner)/\(slug)/issues/"
 
@@ -37,20 +42,27 @@ class RepoController: UITableViewController, UIActionSheetDelegate {
             success: {
                 data, response in
                 let response: NSDictionary! = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableContainers, error: nil) as NSDictionary
-                println(response)
-                //self.activityIndicator.stopAnimating()
                 self.issues = response["issues"] as NSArray
-                
-                if(self.issues.count > 0){
-                    self.tableView.hidden = false
 
+                //self.activityIndicator.stopAnimating()
+                println(self.issues)
+                self.activityIndicator.stopAnimating()
+                if(self.issues.count > 0){
+                    self.noResultView.removeFromSuperview()
                     self.tableView.reloadData()
 
+                }else{
+                    self.noItems.hidden = false
                 }
 
                 
             }, failure: {(error:NSError!) -> Void in
+                //self.activityIndicator.stopAnimating()
                 println(error)
+                self.activityIndicator.stopAnimating()
+                self.noItems.hidden = false
+
+
         })
     }
 
@@ -59,32 +71,63 @@ class RepoController: UITableViewController, UIActionSheetDelegate {
         // Dispose of any resources that can be recreated.
     }
     
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Potentially incomplete method implementation.
         // Return the number of sections.
         return 1
     }
     
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete method implementation.
         // Return the number of rows in the section.
         return self.issues.count
     }
     
     
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell:UITableViewCell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as UITableViewCell
         let row: AnyObject = self.issues[indexPath.row]
         let text = row["title"] as NSString
         cell.textLabel.text = text
-        
         return cell
     }
     
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        let actionSheet = UIActionSheet(title: "ActionSheet", delegate: self, cancelButtonTitle: "Cancel", destructiveButtonTitle: "Done", otherButtonTitles: "Yes", "No")
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let actionSheet = UIActionSheet(title: "What to do ?", delegate: self, cancelButtonTitle: "Cancel", destructiveButtonTitle: "Resolve", otherButtonTitles: "Comment")
+        self.active = self.issues[indexPath.row] as NSDictionary
+        println(active)
         actionSheet.showInView(self.view)
     }
+    
+    func actionSheet(actionSheet: UIActionSheet!, clickedButtonAtIndex buttonIndex: Int){
+        switch buttonIndex{
+            case 0:
+                var parameters =  Dictionary<String, AnyObject>()
+                parameters = ["status":"resolved"]
+                
+                let id:NSString = active["local_id"] as NSString
+                let owner = repo["owner"] as NSString
+                let slug = repo["slug"] as NSString
+                let url: NSString = "https://bitbucket.org/api/1.0/repositories/\(owner)/\(slug)/issues/\(id)/"
+//                oauthswift.client.put(url, parameters: parameters,
+//                    success: {
+//                        data, response in
+//                        let response: NSDictionary! = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableContainers, error: nil) as NSDictionary
+//                        println(response)
+//                        
+//                    }, failure: {(error:NSError!) -> Void in
+//                        println(error)
+//                })
+                break;
+            case 2:
+                NSLog("Comment");
+                break;
+            default:
+                NSLog("Cancle");
+                break;
+        }
+
+ }
     /*
     // MARK: - Navigation
 

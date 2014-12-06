@@ -26,7 +26,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate {
             self.performSegueWithIdentifier("jumpToRepos", sender: self)
             
             }, failure: {(error:NSError!) -> Void in
-                println("doesntWork")
+                println(error)
         })
     }
 }
