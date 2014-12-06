@@ -11,6 +11,7 @@ import UIKit
 class ProjectsController: UITableViewController {
     var repos = [NSDictionary]()
     var selected = NSDictionary()
+    var sections: NSArray = NSArray()
     @IBOutlet weak var tit: UINavigationItem!
 
     override func viewDidLoad() {
@@ -26,18 +27,16 @@ class ProjectsController: UITableViewController {
                 let me:NSArray = response[0] as NSArray
                 
                 user = me[0] as NSDictionary
-                println(user)
+                println(response)
                 var title = user["first_name"] as String
                     title += "'s repositories"
                 self.tit.title = title
                 
+                self.sections = response
                 for rep in response{
-                    let name = rep[0]["username"] as NSString
-                    if(name == "revolucija"){
-                        let reps = rep[1] as NSArray
-                        for proj in reps{
-                            self.repos.append(proj as NSDictionary)
-                        }
+                    let reps = rep[1] as NSArray
+                    for proj in reps{
+                        self.repos.append(proj as NSDictionary)
                     }
                 }
                 self.tableView.reloadData()
@@ -57,31 +56,32 @@ class ProjectsController: UITableViewController {
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Potentially incomplete method implementation.
         // Return the number of sections.
-        return 1
+        return sections.count
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete method implementation.
         // Return the number of rows in the section.
-        return repos.count
+        return sections.objectAtIndex(section)[1].count
     }
-    
-    
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell:UITableViewCell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as UITableViewCell
-        let row: AnyObject = repos[indexPath.row]
-        let text = row["name"] as NSString
-        cell.textLabel.text = text
-        
-        cell.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
+    override func tableView(tableView: UITableView,
+        cellForRowAtIndexPath indexPath: NSIndexPath)
+        -> UITableViewCell {
+            let cell:UITableViewCell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as UITableViewCell
 
-        
-        return cell
+            let row: NSDictionary = self.sections[indexPath.section][1][indexPath.row] as NSDictionary
+            
+            let text = row["name"] as NSString
+            cell.textLabel.text = text
+            
+            cell.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
+            return cell
     }
+    
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        let row: AnyObject = repos[indexPath.row] as NSDictionary
-        self.selected = row as NSDictionary
+        let row: NSDictionary = self.sections[indexPath.section][1][indexPath.row] as NSDictionary
+        self.selected = row
         self.performSegueWithIdentifier("pushDetail", sender: self)
     }
     
@@ -90,6 +90,11 @@ class ProjectsController: UITableViewController {
             var detailVC = segue.destinationViewController as RepoController;
             detailVC.repo = self.selected
         }
+    }
+    override func tableView(tableView: UITableView,
+        titleForHeaderInSection section: Int)
+        -> String {
+            return self.sections[section][0]["display_name"] as NSString
     }
     /*
     // Override to support conditional editing of the table view.

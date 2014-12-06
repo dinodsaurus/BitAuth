@@ -8,13 +8,23 @@
 
 import UIKit
 
-class RepoController: UITableViewController {
+class RepoController: UITableViewController, UIActionSheetDelegate {
     var repo = NSDictionary()
     let me = user["username"] as NSString
     var issues: NSArray = NSArray()
 
+    @IBOutlet weak var detailTitle: UINavigationItem!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        var activityIndicator = UIActivityIndicatorView(frame: CGRectMake(0, 0, 50, 50))
+
+        activityIndicator.hidesWhenStopped = true
+        activityIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.Gray
+
+        self.detailTitle.title = repo["name"] as NSString
+        
+        self.tableView.hidden = false
         let owner = repo["owner"] as NSString
         let slug = repo["slug"] as NSString
         var parameters =  Dictionary<String, AnyObject>()
@@ -27,10 +37,16 @@ class RepoController: UITableViewController {
             success: {
                 data, response in
                 let response: NSDictionary! = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableContainers, error: nil) as NSDictionary
-                
                 println(response)
+                //self.activityIndicator.stopAnimating()
                 self.issues = response["issues"] as NSArray
-                self.tableView.reloadData()
+                
+                if(self.issues.count > 0){
+                    self.tableView.hidden = false
+
+                    self.tableView.reloadData()
+
+                }
 
                 
             }, failure: {(error:NSError!) -> Void in
@@ -62,13 +78,13 @@ class RepoController: UITableViewController {
         let text = row["title"] as NSString
         cell.textLabel.text = text
         
-        var bgColorView = UIView()
-        bgColorView.backgroundColor = UIColor.redColor()
-        cell.selectedBackgroundView = bgColorView
-        
         return cell
     }
-
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let actionSheet = UIActionSheet(title: "ActionSheet", delegate: self, cancelButtonTitle: "Cancel", destructiveButtonTitle: "Done", otherButtonTitles: "Yes", "No")
+        actionSheet.showInView(self.view)
+    }
     /*
     // MARK: - Navigation
 
