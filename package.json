@@ -1,0 +1,24 @@
+{
+  "name": "ionic-present",
+  "version": "1.0.0",
+  "description": "Present Ionic Framework =============",
+  "main": "gulpfile.js",
+  "dependencies": {
+    "gulp": "^3.8.10",
+    "gulp-webserver": "^0.8.7"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dinodsaurus/ionic-present.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dinodsaurus/ionic-present/issues"
+  },
+  "homepage": "https://github.com/dinodsaurus/ionic-present"
+}

@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <!-- Presentation created using reveal.js: https://github.com/hakimel/reveal.js -->
+    <!-- Copyright (C) 2011-2012 Hakim El Hattab, http://hakim.se -->
+
+    <title>Present Ionic Framework</title>
+
+    <meta name="description" content="Ionic Framework Presentation: The beautiful, open source framework for developing hybrid mobile apps with HTML5.">
+    <meta name="author" content="https://twitter.com/adamdbradley">
+    <meta name="author" content="https://twitter.com/benjsperry">
+
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <link rel="stylesheet" href="css/reveal.min.css">
+    <link rel="stylesheet" href="css/ionic.css" id="theme">
+
+    <!-- For syntax highlighting -->
+    <link rel="stylesheet" href="lib/css/zenburn.css">
+
+    <!-- If the query includes 'print-pdf', use the PDF print sheet -->
+    <script>
+      document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+    </script>
+
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-44023830-1', 'ionicframework.com');
+      ga('send', 'pageview');
+
+    </script>
+  </head>
+
+  <body>
+
+    <div class="reveal">
+
+      <div class="slides">
+
+
+        <section>
+          <img src="img/swift.png" class="logo main" width="296">
+          <h4>A new programming language for iOS and OSX</h4>
+          <h5 class="framework-url">
+            <a href="https://developer.apple.com/swift/" target="_blank">Swift</a>
+          </h5>
+        </section>
+
+
+        <section>
+          <h2>History</h2>
+        </section>
+
+        <section>
+          <img src="img/objc.png" class="logo main" width="296">
+          <ul>
+            <li>Objective C designed in 1980</li>
+            <li>Adopted by Next Computer - Steve Jobs</li>
+            <li>C based language = fast</li>
+          </ul>
+        </section>
+        <section>
+          <h3>Cons</h3>
+        </section>
+        <section>
+          <ul>
+            <li>Syntax</li>
+            <li>Harder to use copered to Python/Ruby</li>
+            <li>Interpeted languages allow you to develop more quickly</li>
+          </ul>
+        </section>
+        <section>
+          <img src="img/swift.png" class="logo main" width="296">
+          <h3>Swift</h3>
+        </section>
+        <section>
+          <ul>
+            <li>Automatic garbage collection</li>
+            <li>Inferred typing</li>
+            <li>Performant</li>
+            <li>Accessible</li>
+            <li>Compatable with Objective C!</li>
+          </ul>
+        </section>
+        <section>
+          <pre><code data-trim contenteditable class="xml">NSArray *myArray = [[NSArray alloc] init];
+
+let myArray = String[]()
+
+          </code>
+        </pre>
+
+        <pre><code> NSArray *myArray = [[NSArray alloc] initWithObjects:@"one", @"two", @"three", nil];
+
+var myArray = ["one", "two", "three"]
+
+        </code>
+      </pre>
+      <pre><code data-trim contenteditable class="xml">
+NSString *str = @"hello,";
+str = [str stringByAppendingString:@" world"];
+
+var str = "hello,"
+str += " world"
+
+      </code>
+    </pre>
+        </section>
+        <section>
+          <pre><code>
+for (int i = 1; i <= 10; i++)
+{
+  //your code here
+}
+
+for index in 1...10 {
+  //your code here
+}
+
+
+          </code>
+        </pre>
+      </section>
+        <section>
+          <h2>Get Started with Ionic!</h2>
+          <br />
+          <p><strong>Visit the Community Forum</strong><br />
+          <a href="http://forum.ionicframework.com/" target="_blank"><span class="light-text">forum.ionicframework.com</span></a></p>
+          <br />
+          <p><strong>ngCordova</strong><br />
+          <a href="http://ngcordova.com/" target="_blank"><span class="light-text">ngcordova.com</span></a></p>
+          <br />
+          <p><strong>Pluralsight tutorial</strong><br />
+          <a href="http://www.pluralsight.com/courses/description/building-mobile-apps-ionic-framework-angularjs" target="_blank">
+            <span class="light-text">Building Mobile Apps With the Ionic Framework and AngularJS</span>
+          </a></p>
+          <br />
+          <p><strong>ng Europe</strong><br />
+          <a href="https://www.youtube.com/watch?v=ZjPRj2Vp74U" target="_blank">
+            <span class="light-text">ng Europe Ionic Framework</span>
+          </a></p>
+        </section>
+
+
+        <section>
+          <h3><a href="https://twitter.com/dinodsaurus" target="_blank">@dinodsaurus</a></h3>
+        </section>
+
+
+      </div>
+
+    </div>
+
+    <script src="lib/js/head.min.js"></script>
+    <script src="js/reveal.min.js"></script>
+
+    <script>
+      // Full list of configuration options available here:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+
+        theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+        transition: Reveal.getQueryHash().transition || 'fade', // default/cube/page/concave/zoom/linear/fade/none
+
+        // Optional libraries used to extend on reveal.js
+        dependencies: [
+          { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+        ]
+      });
+    </script>
+
+  </body>
+</html>
