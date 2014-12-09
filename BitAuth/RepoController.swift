@@ -105,19 +105,19 @@ class RepoController: UIViewController, UITableViewDataSource, UITableViewDelega
                 var parameters =  Dictionary<String, AnyObject>()
                 parameters = ["status":"resolved"]
                 
-                let id:NSString = active["local_id"] as NSString
+                let id:NSInteger = active["local_id"] as NSInteger
                 let owner = repo["owner"] as NSString
                 let slug = repo["slug"] as NSString
                 let url: NSString = "https://bitbucket.org/api/1.0/repositories/\(owner)/\(slug)/issues/\(id)/"
-//                oauthswift.client.put(url, parameters: parameters,
-//                    success: {
-//                        data, response in
-//                        let response: NSDictionary! = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableContainers, error: nil) as NSDictionary
-//                        println(response)
-//                        
-//                    }, failure: {(error:NSError!) -> Void in
-//                        println(error)
-//                })
+                oauthswift.client.put(url, parameters: parameters,
+                    success: {
+                        data, response in
+                        let response: NSDictionary! = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableContainers, error: nil) as NSDictionary
+                        println(response)
+                        
+                    }, failure: {(error:NSError!) -> Void in
+                        println(error)
+                })
                 break;
             case 2:
                 NSLog("Comment");

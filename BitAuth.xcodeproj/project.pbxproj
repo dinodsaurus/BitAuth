@@ -7,20 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		93225DB01A370E5F00162F07 /* Dictionary+OAuthSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93225DA51A370E5F00162F07 /* Dictionary+OAuthSwift.swift */; };
+		93225DB11A370E5F00162F07 /* NSURL+OAuthSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93225DA61A370E5F00162F07 /* NSURL+OAuthSwift.swift */; };
+		93225DB21A370E5F00162F07 /* String+OAuthSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93225DA71A370E5F00162F07 /* String+OAuthSwift.swift */; };
+		93225DB31A370E5F00162F07 /* HMACSHA1Signature.m in Sources */ = {isa = PBXBuildFile; fileRef = 93225DA91A370E5F00162F07 /* HMACSHA1Signature.m */; };
+		93225DB41A370E5F00162F07 /* OAuth1Swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93225DAA1A370E5F00162F07 /* OAuth1Swift.swift */; };
+		93225DB51A370E5F00162F07 /* OAuth2Swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93225DAB1A370E5F00162F07 /* OAuth2Swift.swift */; };
+		93225DB61A370E5F00162F07 /* OAuthSwiftClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93225DAD1A370E5F00162F07 /* OAuthSwiftClient.swift */; };
+		93225DB71A370E5F00162F07 /* OAuthSwiftCredential.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93225DAE1A370E5F00162F07 /* OAuthSwiftCredential.swift */; };
+		93225DB81A370E5F00162F07 /* OAuthSwiftHTTPRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93225DAF1A370E5F00162F07 /* OAuthSwiftHTTPRequest.swift */; };
 		93539B721A2D1B0300E78EC4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93539B711A2D1B0300E78EC4 /* AppDelegate.swift */; };
 		93539B741A2D1B0300E78EC4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93539B731A2D1B0300E78EC4 /* ViewController.swift */; };
 		93539B771A2D1B0300E78EC4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 93539B751A2D1B0300E78EC4 /* Main.storyboard */; };
 		93539B7C1A2D1B0300E78EC4 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 93539B7A1A2D1B0300E78EC4 /* LaunchScreen.xib */; };
 		93539B881A2D1B0300E78EC4 /* BitAuthTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93539B871A2D1B0300E78EC4 /* BitAuthTests.swift */; };
-		93539B9E1A2D1B1300E78EC4 /* Dictionary+OAuthSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93539B931A2D1B1300E78EC4 /* Dictionary+OAuthSwift.swift */; };
-		93539B9F1A2D1B1300E78EC4 /* NSURL+OAuthSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93539B941A2D1B1300E78EC4 /* NSURL+OAuthSwift.swift */; };
-		93539BA01A2D1B1300E78EC4 /* String+OAuthSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93539B951A2D1B1300E78EC4 /* String+OAuthSwift.swift */; };
-		93539BA11A2D1B1300E78EC4 /* HMACSHA1Signature.m in Sources */ = {isa = PBXBuildFile; fileRef = 93539B971A2D1B1300E78EC4 /* HMACSHA1Signature.m */; };
-		93539BA21A2D1B1300E78EC4 /* OAuth1Swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93539B981A2D1B1300E78EC4 /* OAuth1Swift.swift */; };
-		93539BA31A2D1B1300E78EC4 /* OAuth2Swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93539B991A2D1B1300E78EC4 /* OAuth2Swift.swift */; };
-		93539BA41A2D1B1300E78EC4 /* OAuthSwiftClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93539B9B1A2D1B1300E78EC4 /* OAuthSwiftClient.swift */; };
-		93539BA51A2D1B1300E78EC4 /* OAuthSwiftCredential.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93539B9C1A2D1B1300E78EC4 /* OAuthSwiftCredential.swift */; };
-		93539BA61A2D1B1300E78EC4 /* OAuthSwiftHTTPRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93539B9D1A2D1B1300E78EC4 /* OAuthSwiftHTTPRequest.swift */; };
 		93967E6A1A30D27600601701 /* ProjectsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93967E691A30D27600601701 /* ProjectsController.swift */; };
 		93967E6C1A31135300601701 /* RepoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93967E6B1A31135300601701 /* RepoController.swift */; };
 		93EDFA141A3230400006DE9F /* BitbucketClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93EDFA131A3230400006DE9F /* BitbucketClient.swift */; };
@@ -39,6 +39,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		93225DA51A370E5F00162F07 /* Dictionary+OAuthSwift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Dictionary+OAuthSwift.swift"; sourceTree = "<group>"; };
+		93225DA61A370E5F00162F07 /* NSURL+OAuthSwift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSURL+OAuthSwift.swift"; sourceTree = "<group>"; };
+		93225DA71A370E5F00162F07 /* String+OAuthSwift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+OAuthSwift.swift"; sourceTree = "<group>"; };
+		93225DA81A370E5F00162F07 /* HMACSHA1Signature.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMACSHA1Signature.h; sourceTree = "<group>"; };
+		93225DA91A370E5F00162F07 /* HMACSHA1Signature.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMACSHA1Signature.m; sourceTree = "<group>"; };
+		93225DAA1A370E5F00162F07 /* OAuth1Swift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OAuth1Swift.swift; sourceTree = "<group>"; };
+		93225DAB1A370E5F00162F07 /* OAuth2Swift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OAuth2Swift.swift; sourceTree = "<group>"; };
+		93225DAC1A370E5F00162F07 /* OAuthSwift-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "OAuthSwift-Bridging-Header.h"; sourceTree = "<group>"; };
+		93225DAD1A370E5F00162F07 /* OAuthSwiftClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OAuthSwiftClient.swift; sourceTree = "<group>"; };
+		93225DAE1A370E5F00162F07 /* OAuthSwiftCredential.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OAuthSwiftCredential.swift; sourceTree = "<group>"; };
+		93225DAF1A370E5F00162F07 /* OAuthSwiftHTTPRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OAuthSwiftHTTPRequest.swift; sourceTree = "<group>"; };
 		93539B6C1A2D1B0300E78EC4 /* BitAuth.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BitAuth.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		93539B701A2D1B0300E78EC4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		93539B711A2D1B0300E78EC4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -48,17 +59,6 @@
 		93539B811A2D1B0300E78EC4 /* BitAuthTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BitAuthTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		93539B861A2D1B0300E78EC4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		93539B871A2D1B0300E78EC4 /* BitAuthTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BitAuthTests.swift; sourceTree = "<group>"; };
-		93539B931A2D1B1300E78EC4 /* Dictionary+OAuthSwift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Dictionary+OAuthSwift.swift"; sourceTree = "<group>"; };
-		93539B941A2D1B1300E78EC4 /* NSURL+OAuthSwift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSURL+OAuthSwift.swift"; sourceTree = "<group>"; };
-		93539B951A2D1B1300E78EC4 /* String+OAuthSwift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+OAuthSwift.swift"; sourceTree = "<group>"; };
-		93539B961A2D1B1300E78EC4 /* HMACSHA1Signature.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMACSHA1Signature.h; sourceTree = "<group>"; };
-		93539B971A2D1B1300E78EC4 /* HMACSHA1Signature.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMACSHA1Signature.m; sourceTree = "<group>"; };
-		93539B981A2D1B1300E78EC4 /* OAuth1Swift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OAuth1Swift.swift; sourceTree = "<group>"; };
-		93539B991A2D1B1300E78EC4 /* OAuth2Swift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OAuth2Swift.swift; sourceTree = "<group>"; };
-		93539B9A1A2D1B1300E78EC4 /* OAuthSwift-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "OAuthSwift-Bridging-Header.h"; sourceTree = "<group>"; };
-		93539B9B1A2D1B1300E78EC4 /* OAuthSwiftClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OAuthSwiftClient.swift; sourceTree = "<group>"; };
-		93539B9C1A2D1B1300E78EC4 /* OAuthSwiftCredential.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OAuthSwiftCredential.swift; sourceTree = "<group>"; };
-		93539B9D1A2D1B1300E78EC4 /* OAuthSwiftHTTPRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OAuthSwiftHTTPRequest.swift; sourceTree = "<group>"; };
 		93967E691A30D27600601701 /* ProjectsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectsController.swift; sourceTree = "<group>"; };
 		93967E6B1A31135300601701 /* RepoController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepoController.swift; sourceTree = "<group>"; };
 		93EDFA131A3230400006DE9F /* BitbucketClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BitbucketClient.swift; sourceTree = "<group>"; };
@@ -84,13 +84,39 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		93225DA31A370E5F00162F07 /* OAuthSwift */ = {
+			isa = PBXGroup;
+			children = (
+				93225DA41A370E5F00162F07 /* extension */,
+				93225DA81A370E5F00162F07 /* HMACSHA1Signature.h */,
+				93225DA91A370E5F00162F07 /* HMACSHA1Signature.m */,
+				93225DAA1A370E5F00162F07 /* OAuth1Swift.swift */,
+				93225DAB1A370E5F00162F07 /* OAuth2Swift.swift */,
+				93225DAC1A370E5F00162F07 /* OAuthSwift-Bridging-Header.h */,
+				93225DAD1A370E5F00162F07 /* OAuthSwiftClient.swift */,
+				93225DAE1A370E5F00162F07 /* OAuthSwiftCredential.swift */,
+				93225DAF1A370E5F00162F07 /* OAuthSwiftHTTPRequest.swift */,
+			);
+			path = OAuthSwift;
+			sourceTree = "<group>";
+		};
+		93225DA41A370E5F00162F07 /* extension */ = {
+			isa = PBXGroup;
+			children = (
+				93225DA51A370E5F00162F07 /* Dictionary+OAuthSwift.swift */,
+				93225DA61A370E5F00162F07 /* NSURL+OAuthSwift.swift */,
+				93225DA71A370E5F00162F07 /* String+OAuthSwift.swift */,
+			);
+			path = extension;
+			sourceTree = "<group>";
+		};
 		93539B631A2D1B0300E78EC4 = {
 			isa = PBXGroup;
 			children = (
 				93539B6E1A2D1B0300E78EC4 /* BitAuth */,
 				93539B841A2D1B0300E78EC4 /* BitAuthTests */,
 				93539B6D1A2D1B0300E78EC4 /* Products */,
-				93539B911A2D1B1300E78EC4 /* OAuthSwift */,
+				93225DA31A370E5F00162F07 /* OAuthSwift */,
 			);
 			sourceTree = "<group>";
 		};
@@ -143,32 +169,6 @@
 				93539B861A2D1B0300E78EC4 /* Info.plist */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		93539B911A2D1B1300E78EC4 /* OAuthSwift */ = {
-			isa = PBXGroup;
-			children = (
-				93539B921A2D1B1300E78EC4 /* extension */,
-				93539B961A2D1B1300E78EC4 /* HMACSHA1Signature.h */,
-				93539B971A2D1B1300E78EC4 /* HMACSHA1Signature.m */,
-				93539B981A2D1B1300E78EC4 /* OAuth1Swift.swift */,
-				93539B991A2D1B1300E78EC4 /* OAuth2Swift.swift */,
-				93539B9A1A2D1B1300E78EC4 /* OAuthSwift-Bridging-Header.h */,
-				93539B9B1A2D1B1300E78EC4 /* OAuthSwiftClient.swift */,
-				93539B9C1A2D1B1300E78EC4 /* OAuthSwiftCredential.swift */,
-				93539B9D1A2D1B1300E78EC4 /* OAuthSwiftHTTPRequest.swift */,
-			);
-			path = OAuthSwift;
-			sourceTree = "<group>";
-		};
-		93539B921A2D1B1300E78EC4 /* extension */ = {
-			isa = PBXGroup;
-			children = (
-				93539B931A2D1B1300E78EC4 /* Dictionary+OAuthSwift.swift */,
-				93539B941A2D1B1300E78EC4 /* NSURL+OAuthSwift.swift */,
-				93539B951A2D1B1300E78EC4 /* String+OAuthSwift.swift */,
-			);
-			path = extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -272,20 +272,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				93539BA11A2D1B1300E78EC4 /* HMACSHA1Signature.m in Sources */,
-				93539BA01A2D1B1300E78EC4 /* String+OAuthSwift.swift in Sources */,
+				93225DB31A370E5F00162F07 /* HMACSHA1Signature.m in Sources */,
+				93225DB71A370E5F00162F07 /* OAuthSwiftCredential.swift in Sources */,
 				93EDFA141A3230400006DE9F /* BitbucketClient.swift in Sources */,
-				93539BA41A2D1B1300E78EC4 /* OAuthSwiftClient.swift in Sources */,
-				93539BA61A2D1B1300E78EC4 /* OAuthSwiftHTTPRequest.swift in Sources */,
+				93225DB61A370E5F00162F07 /* OAuthSwiftClient.swift in Sources */,
 				93539B741A2D1B0300E78EC4 /* ViewController.swift in Sources */,
+				93225DB21A370E5F00162F07 /* String+OAuthSwift.swift in Sources */,
 				93967E6A1A30D27600601701 /* ProjectsController.swift in Sources */,
+				93225DB81A370E5F00162F07 /* OAuthSwiftHTTPRequest.swift in Sources */,
+				93225DB41A370E5F00162F07 /* OAuth1Swift.swift in Sources */,
 				93967E6C1A31135300601701 /* RepoController.swift in Sources */,
+				93225DB11A370E5F00162F07 /* NSURL+OAuthSwift.swift in Sources */,
 				93539B721A2D1B0300E78EC4 /* AppDelegate.swift in Sources */,
-				93539BA31A2D1B1300E78EC4 /* OAuth2Swift.swift in Sources */,
-				93539B9F1A2D1B1300E78EC4 /* NSURL+OAuthSwift.swift in Sources */,
-				93539B9E1A2D1B1300E78EC4 /* Dictionary+OAuthSwift.swift in Sources */,
-				93539BA51A2D1B1300E78EC4 /* OAuthSwiftCredential.swift in Sources */,
-				93539BA21A2D1B1300E78EC4 /* OAuth1Swift.swift in Sources */,
+				93225DB51A370E5F00162F07 /* OAuth2Swift.swift in Sources */,
+				93225DB01A370E5F00162F07 /* Dictionary+OAuthSwift.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
